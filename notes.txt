@@ -1,0 +1,54 @@
+/** getByRole
+ getByRole is used to find element based on element type
+
+/** getByLabelText */
+ getByLabelText is used to find element with particular label
+ its we can use an object as second parameter and selector key to ensure which element we are targeting
+ getByLabelText("Name", {selector: 'input'})
+
+/** getByText */
+ getByText find all the elements that include the given text
+
+/** getByDisplayValue */
+ getByDisplayValue find all the elements with value prop that matches the value
+
+/** getByAltText */
+ getByAltText return element with given alt test. it supports elements that take alt prop only
+
+/** Priority order of queries  */
+ 1. getByRole
+ 2. getByLabelText
+ 3. getByPlaceholderText
+ 4. getByText
+ 5. getByDisplayValue
+ 6. getByAltText
+ 7. getByTitle
+ 8. getByTestId
+
+ /** queryBy and queryByAll */
+
+ use for not cases
+
+  queryBy
+    1. Returns the matching node for a query, and return null if no elements matches
+    2. Useful for asserting an element is not present
+    3. throws error if more than one match in found
+
+queryByAll 
+    1. Returns an array for all matching nodes and return an empty array if not match is found
+
+
+/** findBy and findAllBy */
+
+default timeout for findBy is 1000ms 
+it takes tiemout as a third parameter object
+
+    findBy
+        1. Returns promise which resolves when an element is found which matches the given query
+        2. The promise is rejected if no element is foung or if more than one element is found
+            after default timeout of 1000ms
+
+    findAllBy 
+        1. Returns promise which resolves to an array of elements are found which matches the given query
+        2. The promise is rejected if no element is foung or if more than one element is found
+            after default timeout of 1000ms

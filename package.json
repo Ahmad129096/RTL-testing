@@ -19,8 +19,24 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --verbose", 
+    "eject": "react-scripts eject",
+    "coverage": "npm test -- --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{ts,tsx}",
+      "src/__tests__/**/*.{ts,tsx}",
+      "!src/components/**/*.{types,spec}.{ts,tsx}"
+    ],
+    "coverageThreshold": {
+      "global": {
+          "statements": -10,
+          "branches": 80,
+          "functions": 80,
+          "lines": 80
+      }
+  }
   },
   "eslintConfig": {
     "extends": [
